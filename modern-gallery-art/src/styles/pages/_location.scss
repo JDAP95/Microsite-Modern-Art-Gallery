@@ -1,0 +1,90 @@
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+
+.main-location {
+    background-color: v.$primary-color;
+    color: v.$white-color;
+
+    p {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 28px;
+
+        @include m.breakpoint(v.$bp-desktop) {
+            font-size: 22px;
+            line-height: 32px;
+        }
+    }
+
+    .container {
+        padding: 48px 16px 56px 16px;
+
+        @include m.breakpoint(v.$bp-tablet) {
+            padding: 88px 39px 80px 39px;
+            display: flex;
+            justify-content: space-between;
+            gap: 68px;
+        }
+
+        @include m.breakpoint(v.$bp-desktop) {
+            padding: 104px 165px 80px 128px;
+            gap: 220px;
+        }
+
+        .title {
+            h1 {
+                margin-bottom: 48px;
+                font-family: v.$title-font;
+                font-weight: 900;
+                font-size: 50px;
+                line-height: 45px;
+
+                @include m.breakpoint(v.$bp-tablet) {
+                    margin-top: 0;
+                    font-size: 55px;
+                    line-height: 50px;
+                }
+
+                @include m.breakpoint(v.$bp-desktop) {
+                    font-size: 70px;
+                    line-height: 70px;
+                }
+            }
+        }
+
+        .subtitle {
+            h2 {
+                font-family: v.$title-font;
+                color: v.$secondary-color;
+                font-weight: 900;
+                font-size: 32px;
+                line-height: 32px;
+                margin-bottom: 20px;
+
+                @include m.breakpoint(v.$bp-tablet) {
+                    margin-top: 0;
+                }
+
+                @include m.breakpoint(v.$bp-desktop) {
+                    font-size: 36px;
+                    line-height: 36px;
+                }
+            }
+
+            div {
+                p {
+                    margin-top: 0;
+                    margin-bottom: 5px;
+                }
+
+                p:last-of-type {
+                    margin-bottom: 20px;
+                }
+            }
+
+            &-description {
+                margin: 0;
+            }
+        }
+    }
+}

@@ -1,0 +1,7 @@
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+}

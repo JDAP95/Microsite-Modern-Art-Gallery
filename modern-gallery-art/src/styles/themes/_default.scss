@@ -1,0 +1,15 @@
+@use "../abstracts/variables.scss" as v;
+
+html * {
+    font-family: v.$subtitle-font;
+}
+
+body {
+    overflow-x: hidden;
+    font-size: 16px;
+    margin: 0;
+}
+
+img {
+    max-width: 100%;
+}

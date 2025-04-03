@@ -1,0 +1,45 @@
+@use "./variables" as v;
+
+@mixin breakpoint($bp) {
+    @if $bp == v.$bp-tablet {
+        @media (min-width: v.$bp-tablet) {
+            @content;
+        }
+    }
+
+    @if $bp == v.$bp-tablet-horizontal {
+        @media (min-width: v.$bp-tablet-horizontal) {
+            @content;
+        }
+    }
+
+    @if $bp == v.$bp-desktop {
+        @media (min-width: v.$bp-desktop) {
+            @content;
+        }
+    }
+}
+
+@mixin reset-list() {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+@mixin button-letter() {
+    text-decoration: none;
+    padding: 24px 32px;
+    background-color: v.$primary-color;
+    color: v.$white-color;
+    font-family: v.$title-font;
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: 3.64px;
+}
+
+@mixin button-icon() {
+    text-decoration: none;
+    padding: 32px 24px 20px 24px;
+    background-color: v.$secondary-color;
+}

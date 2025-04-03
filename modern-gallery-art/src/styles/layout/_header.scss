@@ -1,0 +1,168 @@
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+
+.header-home {
+    margin-bottom: 120px;
+    @include m.breakpoint(v.$bp-tablet) {
+        margin-bottom: 45px;
+        background-image: url("../img/tablet/picture-tablet-hero.jpg");
+        background-repeat: no-repeat;
+        background-size: 55%;
+    }
+
+    @include m.breakpoint(v.$bp-desktop) {
+        background-image: url("../img/desktop/picture-desktop-hero.jpg"), url("../img/desktop/picture-desktop-black.png");
+        background-repeat: no-repeat;
+        background-size: 35% 90%, 35% 90%;
+        background-position: center top, left top;
+    }
+
+    .container {
+        @include m.breakpoint(v.$bp-tablet) {
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            padding-top: 145px;
+            padding-bottom: 145px;
+
+        }
+
+        .gallery {
+            @include m.breakpoint(v.$bp-tablet) {
+                display: none;
+            }
+        }
+
+        .hero {
+            padding-left: 16px;
+            padding-right: 16px;
+
+            @include m.breakpoint(v.$bp-tablet) {
+                width: 45%;
+            }
+
+            @include m.breakpoint(v.$bp-desktop) {
+                width: 100%;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 1fr 1fr;
+                column-gap: 246px;
+                padding-left: 165px;
+                padding-right: 165px;
+            }
+
+            &-title {
+                font-family: v.$title-font;
+                font-weight: 900;
+                font-size: 60px;
+                line-height: 55px;
+                margin-top: 32px;
+                margin-bottom: 32px;
+
+                @include m.breakpoint(v.$bp-tablet) {
+                    font-size: 70px;
+                    line-height: 65px;
+                }
+
+                @include m.breakpoint(v.$bp-desktop) {
+                    font-size: 96px;
+                    line-height: 88px;
+                    color: v.$white-color;
+                    grid-area: 1 / 1 / span 2 / span 1;
+                    margin-top: 0;
+                }
+            }
+    
+            &-subtitle {
+                margin: 0;
+                font-weight: 400;
+                font-size: 18px;
+                line-height: 28px;
+                margin-bottom: 64px;
+
+                @include m.breakpoint(v.$bp-desktop) {
+                    font-size: 22px;
+                    line-height: 32px;
+                }
+            }
+    
+            &-nav {
+                ul {
+                    @include m.reset-list();
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+
+                    li:first-child a{
+                        @include m.button-letter();
+                    }
+
+                    li:last-child a{
+                        @include m.button-icon();
+                    }
+                }
+            }
+        }
+    }
+}
+
+.header-location {
+    .container {
+        position: relative;
+
+        .map {
+            img:first-child {
+                @include m.breakpoint(v.$bp-tablet) {
+                    display: none;
+                }
+            }
+
+            img:nth-child(2) {
+                @include m.breakpoint(v.$bp-tablet) {
+                    display: inline;
+                }
+
+                @include m.breakpoint(v.$bp-desktop) {
+                    display: none;
+                }
+            }
+
+            img:last-child {
+                display: none;
+
+                @include m.breakpoint(v.$bp-desktop) {
+                    display: inline;
+                }
+            }
+        }
+
+        nav {
+            position: absolute;
+            top: 22px;
+            left: 0;
+
+            @include m.breakpoint(v.$bp-tablet) {
+                padding-left: 39px;
+            }
+
+            @include m.breakpoint(v.$bp-desktop) {
+                padding-left: 156px;
+            }
+
+            ul {
+                @include m.reset-list();
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+
+                li:first-child a {
+                    @include m.button-icon();
+                }
+
+                li:last-child a {
+                    @include m.button-letter();
+                }
+            }
+        }
+    }
+}

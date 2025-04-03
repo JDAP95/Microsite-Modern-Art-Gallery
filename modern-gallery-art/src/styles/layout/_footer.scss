@@ -1,0 +1,97 @@
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+
+.footer-home {
+    .container {
+        background-color: v.$primary-color;
+        color: v.$white-color;
+        padding: 48px 32px;
+        
+        @include m.breakpoint(v.$bp-tablet) {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 30px;
+            padding: 56px 40px;
+        }
+
+        @include m.breakpoint(v.$bp-desktop) {
+            padding: 80px 165px;
+        }
+
+        p {
+            margin-top: 38px;
+            margin-bottom: 38px;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 26px;
+
+            @include m.breakpoint(v.$bp-tablet) {
+                width: 40%;
+                margin: 0;
+            }
+
+            @include m.breakpoint(v.$bp-desktop) {
+                font-size: 18px;
+                line-height: 28px;
+            }
+        }
+
+        nav {
+            ul {
+                @include m.reset-list();
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                gap: 20px;
+            }
+        }
+    }
+}
+
+.footer-location {
+    .container {
+        background-color: v.$secondary-color;
+        padding: 48px 32px;
+        
+        @include m.breakpoint(v.$bp-tablet) {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 30px;
+            padding: 56px 40px;
+        }
+
+        @include m.breakpoint(v.$bp-desktop) {
+            padding: 80px 165px;
+        }
+
+        p {
+            margin-top: 38px;
+            margin-bottom: 38px;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 26px;
+
+            @include m.breakpoint(v.$bp-tablet) {
+                width: 40%;
+                margin: 0;
+            }
+
+            @include m.breakpoint(v.$bp-desktop) {
+                font-size: 18px;
+                line-height: 28px;
+            }
+        }
+
+        nav {
+            ul {
+                @include m.reset-list();
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                gap: 20px;
+            }
+        }
+    }
+}

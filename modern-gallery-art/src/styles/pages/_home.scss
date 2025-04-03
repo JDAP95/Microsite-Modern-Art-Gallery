@@ -1,0 +1,163 @@
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+
+.main-home {
+    margin-bottom: 120px;
+
+    .container {
+        padding-left: 16px;
+        padding-right: 16px;
+
+        @include m.breakpoint(v.$bp-tablet) {
+            display: grid;
+            grid-template-columns: 1fr 0.5fr 1fr;
+            grid-template-rows: 1fr 0.5fr 1fr;
+            gap: 10px;
+            padding-left: 39px;
+            padding-right: 39px;
+        }
+
+        @include m.breakpoint(v.$bp-desktop) {
+            padding-left: 165px;
+            padding-right: 165px;
+            grid-template-columns: 1fr 0.25fr 1fr;
+            grid-template-rows: 0.25fr 0.25fr 0.25fr;
+            gap: 30px;
+        }
+
+        .description {
+            @include m.breakpoint(v.$bp-tablet) {
+                grid-area: 1 / 1 / span 1 / span 1;
+                padding-top: 36px;
+                padding-right: 50px;
+            }
+
+            
+            @include m.breakpoint(v.$bp-tablet) {
+                padding-top: 36px;
+                padding-right: 50px;
+            }
+
+            &-title {
+                font-family: v.$title-font;
+                font-weight: 900;
+                font-size: 50px;
+                line-height: 45px;
+                margin-top: 25px;
+                margin-bottom: 21px;
+
+                @include m.breakpoint(v.$bp-desktop) {
+                    font-size: 60px;
+                    line-height: 60px;
+                }
+            }
+    
+            &-subtitle {
+                font-weight: 400;
+                font-size: 18px;
+                line-height: 28px;
+                margin-bottom: 32px;
+
+                @include m.breakpoint(v.$bp-desktop) {
+                    font-size: 22px;
+                    line-height: 32px;
+                }
+            }
+        }
+
+        .gallery-1, .gallery-2, .gallery-3 {
+            img:first-child {
+                @include m.breakpoint(v.$bp-tablet) {
+                    display: none;
+                }
+            }
+
+            img:nth-child(2) {
+                display: none;
+
+                @include m.breakpoint(v.$bp-tablet) {
+                    display: inline;
+                }
+
+                @include m.breakpoint(v.$bp-desktop) {
+                    display: none;
+                }
+            }
+            
+            img:last-child {
+                display: none;
+
+                @include m.breakpoint(v.$bp-desktop) {
+                    display: inline;
+                }
+            }
+        }
+
+        .gallery-2, .gallery-3 {
+            margin-bottom: 32px;
+        }
+
+        .gallery-1 {
+            @include m.breakpoint(v.$bp-tablet) {
+                grid-area: 1 / 2 / span 1 / span 2;
+                img {
+                    height: 100%;
+                }
+            }
+        }
+
+        .gallery-2 {
+            @include m.breakpoint(v.$bp-tablet) {
+                grid-area: 2 / 1 / span 2 / span 2;
+                margin-bottom: 0;
+                img {
+                    height: 100%;
+                }
+            }
+        }
+
+        .gallery-3 {
+            @include m.breakpoint(v.$bp-tablet) {
+                grid-area: 2 / 3 / span 1 / span 1;
+                margin-bottom: 0;
+            }
+        }
+    
+        .aside {
+            background-color: v.$primary-color;
+            color: v.$white-color;
+            padding: 48px 24px 48px 24px;
+
+            @include m.breakpoint(v.$bp-tablet) {
+                grid-area: 3 / 3 / span 1 / span 1;
+                padding: 85px 29px 85px 29px;
+            }
+    
+            &-title {
+                font-family: v.$title-font;
+                font-weight: 900;
+                font-size: 50px;
+                line-height: 45px;
+                margin-top: 0;
+                margin-bottom: 24px;
+
+                @include m.breakpoint(v.$bp-desktop) {
+                    font-size: 60px;
+                    line-height: 60px;
+                }
+            }
+    
+            &-subtitle {
+                font-weight: 400;
+                font-size: 18px;
+                line-height: 28px;
+                margin: 0;
+
+                @include m.breakpoint(v.$bp-desktop) {
+                    font-size: 22px;
+                    line-height: 32px;
+                }
+            }
+        }
+    }
+}
